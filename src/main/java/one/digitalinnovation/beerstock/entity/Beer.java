@@ -3,15 +3,11 @@ package one.digitalinnovation.beerstock.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import one.digitalinnovation.beerstock.enums.BeerStrength;
 import one.digitalinnovation.beerstock.enums.BeerType;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -38,6 +34,15 @@ public class Beer {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private BeerType type;
+
+    @Column(nullable = false)
+    private LocalDate fabricationDate;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private BeerStrength strength;
+
+
 
 
 }

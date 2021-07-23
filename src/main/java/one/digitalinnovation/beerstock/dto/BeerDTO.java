@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import one.digitalinnovation.beerstock.enums.BeerStrength;
 import one.digitalinnovation.beerstock.enums.BeerType;
 
 import javax.persistence.EnumType;
@@ -39,4 +40,12 @@ public class BeerDTO {
     @Enumerated(EnumType.STRING)
     @NotNull
     private BeerType type;
+
+    @NotNull
+    private String fabricationDate;
+
+    @Enumerated(EnumType.STRING)
+    @NotNull
+    private BeerStrength strength;
+
 }

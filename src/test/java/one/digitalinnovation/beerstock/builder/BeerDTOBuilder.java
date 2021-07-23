@@ -2,7 +2,10 @@ package one.digitalinnovation.beerstock.builder;
 
 import lombok.Builder;
 import one.digitalinnovation.beerstock.dto.BeerDTO;
+import one.digitalinnovation.beerstock.enums.BeerStrength;
 import one.digitalinnovation.beerstock.enums.BeerType;
+
+import java.time.LocalDate;
 
 @Builder
 public class BeerDTOBuilder {
@@ -25,12 +28,20 @@ public class BeerDTOBuilder {
     @Builder.Default
     private BeerType type = BeerType.LAGER;
 
+    @Builder.Default
+    private String fabricationDate = "1-12-2010";
+
+    @Builder.Default
+    private BeerStrength strength = BeerStrength.STRONG;
+
     public BeerDTO toBeerDTO() {
         return new BeerDTO(id,
                 name,
                 brand,
                 max,
                 quantity,
-                type);
+                type,
+                fabricationDate,
+                strength);
     }
 }
